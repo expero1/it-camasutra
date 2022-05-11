@@ -15,7 +15,7 @@ export const store = {
       },
       currentUserId:1,
     },
-    users: {
+    usersData: {
       currentUser:{
         id: 1,
         username: 'eugene',
@@ -70,14 +70,14 @@ export const store = {
     return this._state;
   },
 
-  RenderApp() { console.log('a') },
+  _subscriber() { console.log('a') },
   subscribe(func) {
-    this.RenderApp = func;
+    this._subscriber = func;
   },
   dispatch(action) {
-    this._state.profileData = profileReducer(action,this._state.profileData)
-    this._state.dialogsData = dialogsReducer (action,this._state.dialogsData)
-    this.RenderApp(this._state)
+    this._state.profileData = profileReducer(this._state.profileData, action)
+    this._state.dialogsData = dialogsReducer (this._state.dialogsData, action)
+    this._subscriber(this._state)
   }
 }
 window.store = store;

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {store} from './redux/state.js'
+import {store} from './redux/redux-store.js'
 
 let rootElem=null;
 export const RenderApp = (state)=>{

@@ -16,8 +16,8 @@ function App(props) {
     <div className="content">
     <Routes>
     <Route path='/' element={<Navigate to='/profile' replace='/profile' />} />
-    <Route path='/dialogs/:userId' element={<Dialogs dialogs={props.state.dialogsData.dialogs} dialogsUsers={props.state.users} dispatch={props.dispatch}/>} />
-    <Route path='/dialogs/' element={<Dialogs dialogsUsers={props.state.users} dispatch={props.dispatch}/>} />
+    <Route path='/dialogs/:userId' element={<Dialogs dialogs={props.state.dialogsData.dialogs} userData={props.state.userData} dispatch={props.dispatch}/>} />
+    <Route path='/dialogs/' element={<Dialogs userData={props.state.userData} dispatch={props.dispatch}/>} />
     <Route path='/profile' element={<Profile profileData={props.state.profileData} dispatch={props.dispatch}/>}/>
     <Route path='/news' element={<News/>}/>
     <Route path='*' element='<div>Undefined route</div>' />
