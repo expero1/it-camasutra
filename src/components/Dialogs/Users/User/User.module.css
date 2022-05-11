@@ -1,0 +1,12 @@
+.dialogsUser img {
+  display: inline;
+  width: 25px;
+  margin-right: 3px;
+}
+a{
+  text-decoration: none;
+  color:#ffffff;
+}
+a.active {
+  color:red;
+}

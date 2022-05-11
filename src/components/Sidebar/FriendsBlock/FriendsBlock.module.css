@@ -1,0 +1,10 @@
+.friendBlockWrapper {
+  margin-top: 40px;
+  display: flex;
+  max-width: 100px;
+  overflow-x: auto;
+}
+
+.friendBlock {
+  margin-right: 5px;
+}

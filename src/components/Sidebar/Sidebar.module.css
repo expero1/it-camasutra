@@ -1,0 +1,12 @@
+.sidebar {
+  grid-area: s;
+  background-color: pink;
+  padding: 5px;
+  
+}
+
+.sidebar .nav_item a {
+  
+  text-decoration: none;
+  color: #fff;
+}

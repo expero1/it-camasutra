@@ -1,0 +1,15 @@
+
+.user_story {
+  max-width: 500px;
+  height: 100px;
+  
+}
+
+.user_resume p{
+  line-height: 1;
+}
+.old_posts .post img {
+  float: left ;
+  margin: 5px;
+  border-radius: 50%;
+}

@@ -1,0 +1,14 @@
+.user_profile {
+  border: 1px solid;
+  min-height: 100px;
+  padding: 3px;
+  display: flex;
+}
+.user_image {
+  
+  height:100%;
+}
+.user_image img {
+  max-width: 60px;
+  border: 1px solid;
+}

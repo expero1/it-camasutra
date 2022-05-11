@@ -1,0 +1,13 @@
+.post {
+  
+}
+.post_header {
+  
+}
+
+
+.post img {
+  float: left ;
+  margin: 5px;
+  border-radius: 50%;
+}

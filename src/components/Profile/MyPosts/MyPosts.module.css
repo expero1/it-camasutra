@@ -1,0 +1,6 @@
+
+.MyPosts .post img {
+  float: left ;
+  margin: 5px;
+  border-radius: 50%;
+}
