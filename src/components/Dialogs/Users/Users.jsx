@@ -9,9 +9,6 @@ const Users = (props) => {
     usersElements.push (<User key={id} data={props.users[id]}/>)
   }
   }
-  
-  
-  
   //props.users.map ((u)=>{
   //  return (
  //     <User username={u.username}

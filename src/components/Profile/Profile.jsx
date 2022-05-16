@@ -1,7 +1,7 @@
 import css from './Profile.module.css';
 import MyPosts from './MyPosts/MyPosts.jsx'
 import {ProfileInfo} from './ProfileInfo/ProfileInfo.jsx'
-import {NewPost} from './NewPost/NewPost.jsx'
+import {NewPostContainer} from './NewPost/NewPostContainer.js'
 
 const Profile = (props) => {
   
@@ -12,7 +12,7 @@ const Profile = (props) => {
     />
         <ProfileInfo/>
         <div className={css.posts}>
-          <NewPost currentPost={props.profileData.currentPost} dispatch={props.dispatch}/>
+          <NewPostContainer currentValue={props.profileData.currentPost} dispatch={props.dispatch}/>
         </div>
         <MyPosts posts={props.profileData.posts}/>
       </div>

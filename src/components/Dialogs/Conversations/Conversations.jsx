@@ -1,6 +1,6 @@
 import {Message} from './Message/Message.jsx'
 import { useParams } from 'react-router-dom'
-import { NewMessage } from './NewMessage/NewMessage.jsx';
+import { NewMessageContainer } from './NewMessage/NewMessageContainer.js';
 import css from './Conversations.module.css'
 const Conversations = (props) => {
   const params = useParams();
@@ -31,7 +31,7 @@ const Conversations = (props) => {
       {messageData}
     </div>
     <div>
-      <NewMessage dispatch={props.dispatch} message= {props.dialogs.currentMessage}  userId={userId} />
+      <NewMessageContainer dispatch={props.dispatch} message= {props.dialogs.currentMessage}  userId={userId} />
     </div>
     </div>
   )
