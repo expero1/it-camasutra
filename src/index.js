@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {store} from './redux/redux-store.js'
+import {StoreContext} from './StoreContext.js'
 
 let rootElem=null;
 export const RenderApp = (state)=>{
@@ -14,7 +15,10 @@ rootElem = ReactDOM.createRoot(document.getElementById('root'));
 
 rootElem.render(
   <React.StrictMode>
-<App state={store.getState()} dispatch={store.dispatch.bind(store)}/>)
+  <StoreContext.Provider value={store}>
+<App state={store.getState()} dispatch={store.dispatch.bind(store)}/>
+</StoreContext.Provider>
+)
     
   </React.StrictMode>
 );

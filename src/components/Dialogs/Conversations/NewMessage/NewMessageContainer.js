@@ -5,19 +5,26 @@ import {sendMessageActionCreator, saveMessageActionCreator} from './../../../../
 import {NewMessage} from './NewMessage.jsx'
 
 export const NewMessageContainer = (props) => {
-const userId = useParams()['userId']
+  const userId = useParams()['userId']
+  let dispatch = props.store.dispatch
+  //let dispatch = props.dispatch;
+  let state = props.store.getState()
+  let message = state.dialogsData.dialogs[userId].currentMessage;
+  //let message = props.message;
+  //let userId = props.userId;
+
   let newMessageBlock = React.createRef();
   const saveMessage = ()=>{
     const value = newMessageBlock.current.value;
-    props.dispatch (saveMessageActionCreator(value, userId))
+    dispatch (saveMessageActionCreator(value, userId))
   }
   
   const sendMessage = ()=>{
-    props.dispatch(sendMessageActionCreator(userId))
+    dispatch(sendMessageActionCreator(userId))
   }
   
   return (
-    <NewMessage saveMessage = {saveMessage} sendMessage = {sendMessage} message = {props.message} newMessageBlock={newMessageBlock}
+    <NewMessage saveMessage = {saveMessage} sendMessage = {sendMessage} message = {message} newMessageBlock={newMessageBlock}
     />
     )
 }

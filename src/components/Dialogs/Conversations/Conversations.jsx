@@ -1,7 +1,9 @@
+
 import {Message} from './Message/Message.jsx'
 import { useParams } from 'react-router-dom'
 import { NewMessageContainer } from './NewMessage/NewMessageContainer.js';
 import css from './Conversations.module.css'
+import {StoreContext} from './../../../StoreContext.js'
 const Conversations = (props) => {
   const params = useParams();
   let messageData = []
@@ -31,7 +33,12 @@ const Conversations = (props) => {
       {messageData}
     </div>
     <div>
-      <NewMessageContainer dispatch={props.dispatch} message= {props.dialogs.currentMessage}  userId={userId} />
+    <StoreContext.Consumer>{
+      (store) => {return (<NewMessageContainer 
+      store={store}/>)
+      }
+    }
+      </StoreContext.Consumer>
     </div>
     </div>
   )

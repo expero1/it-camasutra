@@ -2,7 +2,7 @@ import css from './Profile.module.css';
 import MyPosts from './MyPosts/MyPosts.jsx'
 import {ProfileInfo} from './ProfileInfo/ProfileInfo.jsx'
 import {NewPostContainer} from './NewPost/NewPostContainer.js'
-
+import {StoreContext} from './../../StoreContext.js'
 const Profile = (props) => {
   
   return (
@@ -12,7 +12,13 @@ const Profile = (props) => {
     />
         <ProfileInfo/>
         <div className={css.posts}>
-          <NewPostContainer currentValue={props.profileData.currentPost} dispatch={props.dispatch}/>
+        <StoreContext.Consumer>{
+          (store)=>{
+            return (<NewPostContainer store = {store}/>)
+          }
+        }
+          
+        </StoreContext.Consumer>
         </div>
         <MyPosts posts={props.profileData.posts}/>
       </div>
