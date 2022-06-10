@@ -28,21 +28,26 @@ const SAVE_CURRENT_POST = 'SAVE-CURRENT-POST'
       ]
     }
 export const profileReducer = (state=profileData, action)=>{
+  let newState;
    switch (action.type) {
       case ADD_POST:
-        state.posts.push(
+        newState = {...state, ...state.posts};
+        newState.posts.push(
       {
         header: '',
         body: state.currentPost,
         image: 'https://dummyimage.com/50x50/efefef/000000.jpg',
         likes: '0',
       })
-    state.currentPost = '';
-    return state
+    newState.currentPost = '';
+    return newState;
       
     case SAVE_CURRENT_POST:
-      state.currentPost = action.text;
-      return state;
+      newState = {...state}
+      newState.currentPost = action.text;
+      //state.currentPost = action.text;
+      //return state;
+      return newState;
         
         
       default:

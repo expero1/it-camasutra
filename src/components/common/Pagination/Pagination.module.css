@@ -1,0 +1,13 @@
+
+.paginationContainer {
+    max-width: 600px;
+    word-break: break-word;
+    max-height: 150px;
+    overflow: auto;
+}
+.activePage {
+    font-weight: bold;
+}
+a {
+    margin-right: 10px;
+}

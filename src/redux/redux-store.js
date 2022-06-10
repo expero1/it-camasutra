@@ -10,3 +10,4 @@ const reducers = combineReducers ({
 export const store = createStore(reducers)
 
 window.store = store;
+window.state = store.getState();

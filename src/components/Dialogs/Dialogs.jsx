@@ -1,14 +1,18 @@
 import css from './Dialogs.module.css'
 import Users from './Users/Users.jsx'
 import Conversations from './Conversations/Conversations.jsx';
-import {Routes, Route, useParams} from 'react-router-dom';
-import {NewMesage} from './Conversations/NewMessage/NewMessage.jsx'
+import {useParams} from 'react-router-dom';
+//import {NewMesage} from './Conversations/NewMessage/NewMessage.jsx'
+//import { saveCurrentDialogUserIdActionCreator } from '../../redux/dialogs-reducer';
+ 
 const Dialogs = (props) => {
   const params = useParams();
+  //let dispatch = props.dispatch;
+  //dispatch (saveCurrentDialogUserIdActionCreator(params.userId))
   let conversations = undefined;
-  let currentUserId = props.userData.currentUser.id;
+  //let currentUserId = props.userData.currentUser.id;
   if ('userId' in params && params['userId'] in props.dialogs){
-    conversations = <Conversations dialogs={props.dialogs[params['userId']]} dispatch={props.dispatch}/>
+    conversations = <Conversations dialogs={props.dialogs[params['userId']]} dispatch={props.dispatch} userId = {params['userId']}/>
   }
   
   return (

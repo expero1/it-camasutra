@@ -5,7 +5,7 @@ export const ProfileInfo = ()=>{
     <div className={css.user_profile}>
       <div className={css.user_image}>
       <img 
-        src="https://clipart-best.com/img/mario/mario-clip-art-5.png" 
+        src="https://dummyimage.com/150x150/efefef/000000.jpg" alt='' 
       />
       </div>
       <div className={css.user_info}>

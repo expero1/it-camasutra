@@ -14,6 +14,9 @@ const Sidebar = (props) => {
     <div className={css.nav_item}>
       <Link to='/news'>News</Link>
     </div>
+    <div className={css.nav_item}>
+      <Link to='/users'>Users</Link>
+    </div>
       
     <FriendsBlock friends={props.friends} />
     </div>

@@ -1,13 +1,17 @@
-
 import {Message} from './Message/Message.jsx'
 import { useParams } from 'react-router-dom'
 import { NewMessageContainer } from './NewMessage/NewMessageContainer.js';
 import css from './Conversations.module.css'
-import {StoreContext} from './../../../StoreContext.js'
+//import {StoreContext} from './../../../StoreContext.js'
+import { Provider } from 'react-redux';
+import {store} from './../../../redux/redux-store'
+ 
 const Conversations = (props) => {
   const params = useParams();
+  let userId = params.userId;
   let messageData = []
-  const userId = props.userId;
+  //const userId = props.userId;
+  
   for (let messageId in props.dialogs.dialog) {
       let id = props.dialogs.dialog[messageId]['id']
       let text = props.dialogs.dialog[messageId]['m']
@@ -20,7 +24,7 @@ const Conversations = (props) => {
         
       }
       let position = 'left';
-      if (props.currentUser != id){
+      if (props.currentUser !== id){
         position='right'
       }
       messageData.push(<Message key={key} text={text} position={position} />);
@@ -33,12 +37,8 @@ const Conversations = (props) => {
       {messageData}
     </div>
     <div>
-    <StoreContext.Consumer>{
-      (store) => {return (<NewMessageContainer 
-      store={store}/>)
-      }
-    }
-      </StoreContext.Consumer>
+      <NewMessageContainer 
+      store={store} key={userId}/>
     </div>
     </div>
   )

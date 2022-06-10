@@ -6,6 +6,8 @@ import Profile from './components/Profile/Profile.jsx';
 import Dialogs from './components/Dialogs/Dialogs.jsx';
 import News from './components/News/News.jsx'
 import {Route, Routes, BrowserRouter, Navigate} from 'react-router-dom'
+import { UsersContainer } from './components/Users/UsersContainer';
+
 function App(props) {
   
   return (
@@ -20,6 +22,9 @@ function App(props) {
     <Route path='/dialogs/' element={<Dialogs userData={props.state.userData} dispatch={props.dispatch}/>} />
     <Route path='/profile' element={<Profile profileData={props.state.profileData} dispatch={props.dispatch}/>}/>
     <Route path='/news' element={<News/>}/>
+    <Route path='/users' element={<UsersContainer/>}/>
+    <Route path='/users/:userId' element={<UsersContainer/> } />
+
     <Route path='*' element='<div>Undefined route</div>' />
     </Routes>
     
